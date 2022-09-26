@@ -1,0 +1,75 @@
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: arial;
+    }
+    .container {
+    text-align: center;
+    }
+    .elements {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 40px;
+    position: relative;
+    }
+    .line {
+    /*purple line*/
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background-color: rgb(104, 42, 219);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 1;
+    transition: all 0.5s;
+    }
+    .elements::after {
+    /*grey line*/
+    content:'';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: rgb(211, 211, 224);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 0;
+    }
+    .circle {
+    border: 3px solid #aaa;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: #fff;
+    transition: all 0.5s;
+    }
+    .circle.active {
+    border-color: rgb(104, 42, 219);
+    }
+    button{
+    background-color: rgb(104, 42, 219);
+    font-size: 18px;
+    color:rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 90px;
+    height: 40px;
+    box-shadow: none;
+    border:none;
+    margin-right:15px;
+    cursor: pointer;
+    }
+    button:disabled {
+    background-color: rgb(216, 200, 200);
+    cursor: not-allowed;
+    }
+    button:active {
+    transform: scale(0.97);
+    }
